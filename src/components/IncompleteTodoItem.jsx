@@ -39,7 +39,7 @@ export const IncompleteTodoItem = (props) => {
     <li className="list-group-item d-flex">
       <span className="flex-grow-1">{incompleteTodo}</span>
       <button
-        className="btn btn-sm btn-outline-primary mr-1"
+        className="btn btn-sm btn-outline-primary mr-2"
         onClick={onClickDoneButton}
       >
         完了
