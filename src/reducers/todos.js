@@ -12,17 +12,27 @@ export const todos = (state, action) => {
     // --------------------------------
     case ADD_TODO: {
       const { todoText } = action
-      const todo = {
-        todoText: todoText,
-        done: false,
+      // 未完了のToDOに追加
+      return {
+        incompleteTodos: [...state.incompleteTodos, todoText],
+        completeTodos: [...state.completeTodos],
       }
-      return [...state, todo]
     }
     // --------------------------------
     // 未完了のToDo ▶ 完了ボタン
     // --------------------------------
     case COMPLETE_TODO: {
-      return state
+      const { index: doneTodoIndex } = action
+      // 完了したToDoのテキスト
+      const doneTodoText = state.incompleteTodos[doneTodoIndex]
+      // 未完了のToDoからindex番目の要素を削除
+      const newIncompleteTodos = state.incompleteTodos.filter(
+        (incompleteTodo, index) => index !== doneTodoIndex
+      )
+      return {
+        incompleteTodos: newIncompleteTodos,
+        completeTodos: [...state.completeTodos, doneTodoText],
+      }
     }
     // --------------------------------
     // 未完了のToDo ▶ 削除ボタン

@@ -5,10 +5,8 @@
 
 // React
 import React, { useContext, useState } from 'react'
-
 // Context
 import { AppContext } from '../contexts/AppContext'
-
 // Action
 import { ADD_TODO } from '../actions'
 
@@ -18,7 +16,6 @@ export const InputTodo = () => {
 
   // 追加ボタンのイベントハンドラ
   const onClickAddButton = () => {
-    // ToDoを追加
     dispatch({
       type: ADD_TODO,
       todoText,

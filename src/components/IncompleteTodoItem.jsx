@@ -4,18 +4,34 @@
 */
 
 // React
-import React from 'react'
+import React, { useContext } from 'react'
+// Context
+import { AppContext } from '../contexts/AppContext'
+// Action
+import { COMPLETE_TODO } from '../actions'
 
 export const IncompleteTodoItem = (props) => {
-  const { todo } = props
+  const { index, incompleteTodo } = props
+  const { dispatch } = useContext(AppContext)
 
-  const element = (
+  // 完了ボタンのイベントハンドラ
+  const onClickDoneButton = () => {
+    dispatch({
+      type: COMPLETE_TODO,
+      index,
+    })
+  }
+
+  return (
     <li className="list-group-item d-flex">
-      <span className="flex-grow-1">{todo.todoText}</span>
-      <button className="btn btn-sm btn-outline-primary mr-1">完了</button>
+      <span className="flex-grow-1">{incompleteTodo}</span>
+      <button
+        className="btn btn-sm btn-outline-primary mr-1"
+        onClick={onClickDoneButton}
+      >
+        完了
+      </button>
       <button className="btn btn-sm btn-outline-danger">削除</button>
     </li>
   )
-
-  return !todo.done ? element : ''
 }
