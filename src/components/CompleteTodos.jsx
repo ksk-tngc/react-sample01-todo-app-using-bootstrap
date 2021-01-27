@@ -14,11 +14,11 @@ export const CompleteTodos = () => {
         <ul className="list-group list-group-flush">
           <li className="list-group-item d-flex">
             <span className="flex-grow-1">完了したToDo</span>
-            <button className="btn btn-sm btn-warning">戻す</button>
+            <button className="btn btn-sm btn-outline-warning">戻す</button>
           </li>
           <li className="list-group-item d-flex">
             <span className="flex-grow-1">完了したToDo</span>
-            <button className="btn btn-sm btn-warning">戻す</button>
+            <button className="btn btn-sm btn-outline-warning">戻す</button>
           </li>
         </ul>
       </div>
