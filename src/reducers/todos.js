@@ -23,12 +23,13 @@ export const todos = (state, action) => {
     // --------------------------------
     case COMPLETE_TODO: {
       const { index: doneTodoIndex } = action
-      // 完了したToDoのテキスト
+      // 完了させるToDoのテキスト
       const doneTodoText = state.incompleteTodos[doneTodoIndex]
       // 未完了のToDoからindex番目の要素を削除
       const newIncompleteTodos = state.incompleteTodos.filter(
         (incompleteTodo, index) => index !== doneTodoIndex
       )
+      // 状態遷移
       return {
         incompleteTodos: newIncompleteTodos,
         completeTodos: [...state.completeTodos, doneTodoText],
@@ -44,7 +45,18 @@ export const todos = (state, action) => {
     // 完了したToDo ▶ 戻すボタン
     // --------------------------------
     case RETURN_TODO: {
-      return state
+      const { index: returnTodoIndex } = action
+      // 戻すToDoのテキスト
+      const returnTodoText = state.completeTodos[returnTodoIndex]
+      // 完了したToDoからindex番目の要素を削除
+      const newCompleteTodos = state.completeTodos.filter(
+        (completeTodo, index) => index !== returnTodoIndex
+      )
+      // 状態遷移
+      return {
+        incompleteTodos: [...state.incompleteTodos, returnTodoText],
+        completeTodos: newCompleteTodos,
+      }
     }
     // --------------------------------
     // 上記以外
