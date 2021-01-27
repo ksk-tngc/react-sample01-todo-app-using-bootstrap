@@ -39,7 +39,14 @@ export const todos = (state, action) => {
     // 未完了のToDo ▶ 削除ボタン
     // --------------------------------
     case DELETE_TODO: {
-      return state
+      const { index: deleteTodoIndex } = action
+      // 未完了のToDoからindex番目の要素を削除
+      return {
+        incompleteTodos: state.incompleteTodos.filter(
+          (incompleteTodo, index) => index !== deleteTodoIndex
+        ),
+        completeTodos: [...state.completeTodos],
+      }
     }
     // --------------------------------
     // 完了したToDo ▶ 戻すボタン

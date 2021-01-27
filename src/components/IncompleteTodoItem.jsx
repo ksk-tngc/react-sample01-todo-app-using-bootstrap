@@ -8,7 +8,7 @@ import React, { useContext } from 'react'
 // Context
 import { AppContext } from '../contexts/AppContext'
 // Action
-import { COMPLETE_TODO } from '../actions'
+import { COMPLETE_TODO, DELETE_TODO } from '../actions'
 
 export const IncompleteTodoItem = (props) => {
   const { index, incompleteTodo } = props
@@ -22,6 +22,19 @@ export const IncompleteTodoItem = (props) => {
     })
   }
 
+  // 削除ボタンのイベントハンドラ
+  const onClickDeleteButton = () => {
+    // 確認
+    const confMsg = '削除してもよろしいですか？'
+    if (!window.confirm(confMsg)) {
+      return
+    }
+    dispatch({
+      type: DELETE_TODO,
+      index,
+    })
+  }
+
   return (
     <li className="list-group-item d-flex">
       <span className="flex-grow-1">{incompleteTodo}</span>
@@ -31,7 +44,12 @@ export const IncompleteTodoItem = (props) => {
       >
         完了
       </button>
-      <button className="btn btn-sm btn-outline-danger">削除</button>
+      <button
+        className="btn btn-sm btn-outline-danger"
+        onClick={onClickDeleteButton}
+      >
+        削除
+      </button>
     </li>
   )
 }
