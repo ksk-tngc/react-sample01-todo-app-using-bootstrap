@@ -17,6 +17,13 @@ export const IncompleteTodos = () => {
     <>
       <div className="mb-3 p-4 shadow rounded-lg">
         <p className="text-center font-weight-bold text-muted">未完了のToDo</p>
+
+        {state.incompleteTodos.length === 0 ? (
+          <div className="alert alert-success">ToDoはありません。</div>
+        ) : (
+          ''
+        )}
+
         <ul className="list-group list-group-flush">
           {state.incompleteTodos.map((incompleteTodo, index) => (
             <IncompleteTodoItem
