@@ -11,8 +11,9 @@ export const todos = (state, action) => {
     // ToDoを追加
     // --------------------------------
     case ADD_TODO: {
+      const { todoText } = action
       const todo = {
-        todoText: action.todoText,
+        todoText: todoText,
         done: false,
       }
       return [...state, todo]
