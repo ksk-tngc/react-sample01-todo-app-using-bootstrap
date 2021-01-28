@@ -1,4 +1,6 @@
-# my-react-todo-app-using-bootstrap
+my-react-todo-app-using-bootstrap
+
+# 概要
 
 React + Bootstrap によるシンプルなToDoアプリ。
 
