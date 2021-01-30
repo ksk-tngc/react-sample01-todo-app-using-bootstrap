@@ -2,7 +2,16 @@ my-react-todo-app-using-bootstrap
 
 # 概要
 
-React + Bootstrap によるシンプルなToDoアプリ。
+React + Bootstrap によるシンプルなToDoアプリです。
+
+# 使用API・パッケージ
+
+- Hooks
+  - useState
+  - useContext
+  - useReducer
+
+- Bootstrap
 
 # レンダリング
 
@@ -21,13 +30,4 @@ ToDo削除
 # ファイル構成
 
 <img src="https://user-images.githubusercontent.com/59589496/106016855-3a8c4700-6103-11eb-8f4c-a337f72b16d6.png" width="35%">
-
-# 使用API・パッケージ
-
-- Hooks
-  - useState
-  - useContext
-  - useReducer
-
-- Bootstrap
 
