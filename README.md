@@ -1,6 +1,12 @@
 ## 概要
 
-React + Bootstrap によるシンプルなToDoアプリです。
+React + Bootstrap によるシンプルな ToDo アプリです。
+
+以下の要素を含みます：
+
+* Context (グローバルstate)
+* useReducer
+* Bootstrap
 
 ## レンダリング
 
@@ -20,8 +26,3 @@ React + Bootstrap によるシンプルなToDoアプリです。
 
 <img width="320" src="https://user-images.githubusercontent.com/59589496/106016855-3a8c4700-6103-11eb-8f4c-a337f72b16d6.png">
 
-## 使用API・ライブラリ
-
-* createContext, useContext
-* useReducer
-* Bootstrap
